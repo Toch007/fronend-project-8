@@ -1,0 +1,388 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: var(--ff);
+}
+
+/*---------root declarations-------*/
+
+:root {
+  --clr-str-cyan: hsl(171, 66%, 44%);
+  --clr-l-blue: hsl(233, 100%, 69%);
+  --clr-dg-blue: hsl(210, 10%, 33%);
+  --clr-g-blue: hsl(200, 16%, 89%);
+
+  --fs-subheader: 36px;
+  --fs-small: 22px;
+  --ff: "Bai Jamjuree", sans-serif;
+  --fw-body: 400;
+  --fw-header: 600;
+}
+
+@media only screen and (min-width: 800px) {
+  :root {
+    --fw-body: 400;
+    --fw-header: 600;
+    --fs-small: 18px;
+    --fs-subheader: 32px;
+    --fs-minheader: 24px;
+    --fs-mintext: 15px;
+  }
+}
+
+/*---------fixed elements-------*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+p {
+  opacity: 0.7;
+  text-align: center;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.min-header {
+  font-size: var(--fs-minheader);
+}
+.min-text {
+  font-size: var(--fs-mintext);
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  margin: 2em 0 8em;
+}
+
+.green-btn,
+.purple-btn {
+  padding: 1.2em 1.7em;
+  border-radius: 50px;
+  margin: 1em 5px;
+  border: none;
+  color: #fff;
+  box-shadow: -14px 20px 20px -15px rgba(0, 0, 0, 0.75);
+  min-width: 90%;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-header);
+}
+
+.green-btn {
+  background: var(--clr-str-cyan);
+}
+
+.purple-btn {
+  background: var(--clr-l-blue);
+}
+
+.green-btn:hover,
+.purple-btn:hover {
+  opacity: 0.7;
+}
+
+section {
+  padding: 1.5em;
+}
+
+@media only screen and (min-width: 800px) {
+  .btn {
+    display: flex;
+    flex-direction: unset;
+    justify-content: center;
+    margin: 2em 0 5em;
+  }
+
+  .green-btn,
+  .purple-btn {
+    padding: 0.8em 1.7em;
+    border-radius: 20px;
+    margin: 0 5px;
+    border: none;
+    color: #fff;
+    box-shadow: -14px 20px 20px -15px rgba(0, 0, 0, 0.75);
+    min-width: max-content;
+  }
+
+  section {
+    padding: 0;
+  }
+}
+
+body {
+  font-size: var(--fs-small);
+}
+
+img {
+  max-width: 100%;
+}
+
+/*---------styling of the header-------*/
+
+header {
+  background-image: url(images/bg-header-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em;
+}
+
+.header-svg {
+  display: grid;
+  justify-items: center;
+  padding: 7em;
+}
+
+header svg {
+  margin: auto;
+}
+
+@media only screen and (min-width: 800px) {
+  header {
+    background-image: url(images/bg-header-desktop.png);
+    padding: 1em;
+  }
+
+  .header-svg {
+    padding: 2em;
+  }
+  header svg {
+    width: 120px;
+  }
+}
+
+/*---------styling of the first section (.history)-------*/
+
+.history {
+  text-align: center;
+  margin: 0 auto 4em;
+}
+
+.history__header {
+  font-weight: var(--fw-header);
+  font-size: 3.5rem;
+  padding: 0.5em 0;
+}
+
+.sub-header {
+  font-size: var(--fs-subheader);
+  padding: 0.5em 0;
+}
+
+@media only screen and (min-width: 800px) {
+  .history {
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto 4em;
+  }
+  .history__header {
+    font-size: 2.8rem;
+  }
+}
+
+/*---------styling of the second section (.computer)-------*/
+
+.computer {
+  margin-bottom: 8em;
+}
+
+.computer__sub-header {
+  margin-top: 1.8em;
+}
+
+@media only screen and (min-width: 800px) {
+  .computer {
+    display: flex;
+    margin-bottom: 8em;
+  }
+
+  .computer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 9em;
+    font-size: var(--fs-small);
+  }
+}
+
+/*---------styling of the third section (.access)-------*/
+
+.access {
+  text-align: center;
+}
+.access__img {
+  padding: 3em 0;
+}
+
+.access__text {
+  max-width: 650px;
+  margin: 0 auto 4em;
+}
+
+@media only screen and (min-width: 800px) {
+  .access__text {
+    max-width: 650px;
+  }
+}
+
+/*---------styling of the fourth section (.grid-section)-------*/
+
+.grid-section {
+  margin: 0 auto 4em;
+}
+
+.grid__img {
+  display: block;
+  width: 2.5em;
+  margin: 3em auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1em;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto 4em;
+    align-items: first baseline;
+  }
+
+  .grid__header {
+    margin: 1em 0;
+  }
+}
+
+/*---------styling of the fifth section (.flex-area)-------*/
+
+.flex-area {
+  display: flex;
+  flex-direction: column;
+  margin: 4em auto 4em;
+}
+
+.flex-area img {
+  margin: 2.5em auto;
+  width: 8.5em;
+}
+
+@media only screen and (min-width: 800px) {
+  .flex-area {
+    flex-direction: unset;
+    max-width: 850px;
+    justify-content: center;
+    align-content: space-evenly;
+    margin: 8em auto 6em;
+  }
+
+  .flex-area img {
+    margin: 0 2em;
+    width: 8.5em;
+  }
+}
+
+/*---------styling of the sixth section (.clipboard)-------*/
+
+.clipboard {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .clipboard {
+    margin: 6em auto;
+    max-width: 650px;
+  }
+}
+
+/*---------styling of the footer-------*/
+
+footer {
+  background-color: var(--clr-g-blue);
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+.footer-svg {
+  justify-self: center;
+}
+
+footer svg {
+  width: 70px;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  align-content: space-between;
+  margin: 1.7em 2em;
+}
+
+.link p {
+  margin: 0.7em;
+}
+
+.link a {
+  text-decoration: none;
+  color: var(--clr-dg-blue);
+  font-weight: var(--fw-header);
+}
+
+footer ul {
+  display: flex;
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+footer li {
+  list-style-type: none;
+  margin: 0 1em;
+}
+
+.fa {
+  color: var(--clr-dg-blue);
+}
+
+.fa:hover,
+.link a:hover {
+  color: var(--clr-str-cyan);
+}
+
+@media only screen and (min-width: 800px) {
+  footer {
+    background-color: var(--clr-g-blue);
+    grid-template-rows: unset;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    align-content: space-evenly;
+  }
+
+  .link {
+    margin: 0 2em;
+  }
+
+  .link p {
+    margin: 0.5em;
+  }
+
+  footer li {
+    margin-left: 1em;
+  }
+}
